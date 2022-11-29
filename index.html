@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Toy Drone</title>
+    <meta name="description" content="Description Goes Here" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <video playsinline autoplay muted loop>
+      <source src="video-1.mp4" type="video/webm" /> -->
+
+      <div>
+        <div>
+          <input
+            type="text"
+            id="placeX"
+            name="Place X"
+            placeholder="X Coordinate"
+            required
+          />
+          <input
+            type="text"
+            id="placeY"
+            name="Place Y"
+            placeholder="Y Coordinate"
+            required
+          />
+          <button type="button" onclick="place()">Place</button>
+        </div>
+        <div>
+          <input type="radio" id="north" name="direction" value="NORTH" />  
+          <label for="north">North</label>
+            <input type="radio" id="east" name="direction" value="EAST" />  
+          <label for="east">East</label>
+           
+          <input type="radio" id="south" name="direction" value="SOUTH" />
+            <label for="south">South</label>
+          <input type="radio" id="west" name="direction" value="WEST" />
+            <label for="west">West</label>
+        </div>
+        <div>
+          <canvas id="game" width="400" height="400" />
+          <img id="drone" src="drone.jpg" alt="Drone" />
+          <script src="index.js"></script>
+        </div>
+        <div>
+          <button type="button" onclick="move()">Move</button>
+          <button type="button" onclick="left()">Left</button>
+          <button type="button" onclick="right()">Right</button>
+          <button type="button" onclick="attack()">Attack</button>
+          <button type="button" onclick="report()">Report</button>
+          <button type="button" onclick="clearScreen()">Reset Position</button>
+        </div>
+      </div>
+    <!-- </video> -->
+  </body>
+</html>

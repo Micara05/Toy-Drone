@@ -1,0 +1,19 @@
+.body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column; /* arrage items on top of the other */
+  justify-content: center;
+  align-items: center;
+}
+.canvas {
+  box-shadow: rgb(0, 0, 0) 20px 10px 50px; /*elevate our canvas and add shadow*/
+}
+
+.inputButtons {
+  place-items: center;
+}
+
+/* .backgroundTemplate {
+  background: url("video-1.mp4") ;
+} */
