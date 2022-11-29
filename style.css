@@ -61,12 +61,12 @@
 .buttonleftArrow {
   height: 50px;
   width: 54px;
-  background-image: url("images/leftArrow.png");
+  background-image: url("images/leftarrow.png");
 }
 
 .buttonRightArrow{
   height: 50px;
   width: 54px;
-  background-image: url("images/rightArrow.png");
+  background-image: url("images/rightarrow.png");
 }
 
