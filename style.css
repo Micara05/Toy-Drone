@@ -14,6 +14,59 @@
   place-items: center;
 }
 
-/* .backgroundTemplate {
-  background: url("video-1.mp4") ;
-} */
+/* .backgroundImage {
+  background-image: url("background.jpg");
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* /* background: url("video-1.mp4") ; */
+/* }  */
+
+.parent {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+}
+.child {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px;
+  align-self: middle;
+}
+
+
+.buttonMove {
+  height: 50px;
+  width: 58px;
+  background-image: url("images/move.png");
+  /* background: url('../../public/images/img-4.jpg') center center/cover no-repeat;  */
+}
+
+.buttonReport {
+  height: 50px;
+  width: 60px;
+  background-image: url("images/report.png");
+}
+
+.buttonAttack {
+  height: 50px;
+  width: 57px;
+  background-image: url("images/attack.png");
+}
+
+.buttonleftArrow {
+  height: 50px;
+  width: 54px;
+  background-image: url("images/leftArrow.png");
+}
+
+.buttonRightArrow{
+  height: 50px;
+  width: 54px;
+  background-image: url("images/rightArrow.png");
+}
+

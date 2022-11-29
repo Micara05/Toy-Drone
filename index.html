@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- <video playsinline autoplay muted loop>
-      <source src="video-1.mp4" type="video/webm" /> -->
-
-      <div>
+  
+      <h1>Hello</h1>
+      <div class="child">
         <div>
           <input
             type="text"
@@ -41,18 +40,49 @@
         </div>
         <div>
           <canvas id="game" width="400" height="400" />
-          <img id="drone" src="drone.jpg" alt="Drone" />
+          <img id="drone" src="images/drone.jpg" alt="Drone" />
           <script src="index.js"></script>
         </div>
         <div>
-          <button type="button" onclick="move()">Move</button>
-          <button type="button" onclick="left()">Left</button>
-          <button type="button" onclick="right()">Right</button>
-          <button type="button" onclick="attack()">Attack</button>
-          <button type="button" onclick="report()">Report</button>
-          <button type="button" onclick="clearScreen()">Reset Position</button>
+          <button
+            class="buttonMove"
+            type="button"
+            onclick="move()"
+            title="Move"
+          ></button>
+          <button
+            class="buttonleftArrow"
+            type="button"
+            onclick="left()"
+            title="Left"
+          ></button>
+          <button
+            class="buttonRightArrow"
+            type="button"
+            onclick="right()"
+            title="Right"
+          ></button>
+          <button
+            class="buttonAttack"
+            type="button"
+            onclick="attack()"
+            title="Attack"
+          ></button>
+          <button
+            class="buttonReport"
+            type="button"
+            onclick="report()"
+            title="Report"
+          ></button>
         </div>
       </div>
-    <!-- </video> -->
+    
+        <label id="actionLabel"></label>
+        <label id="directionLabel"></label>
+      
+    
+    <!-- <video playsinline autoplay muted loop>
+      <source src="video-1.mp4" type="video/webm" />
+    </video> -->
   </body>
 </html>

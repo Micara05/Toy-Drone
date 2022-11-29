@@ -4,11 +4,8 @@ var tileCount = 40;
 var tileSize = 40;
 var headX;
 var headY;
-
 var direction;
 var state = false;
-
-// document.body.addEventListener("keydown", keyDown);
 
 function place() {
   var placeX = document.getElementById("placeX").value;
@@ -43,122 +40,44 @@ function place() {
       }
     }
 
-    console.log(placeX);
-    console.log(placeY);
-    console.log(direction);
     state = true;
-    console.log(state);
     drawGame();
   } else {
     alert("Coordinate X, Coordinate Y & Direction may not be empty.");
   }
 }
 
-// function keyDown(event) {
-//   //up - move
-//   if (event.keyCode == 38) {
-//     switch (direction) {
-//       case "NORTH":
-//         if (headY > 0) {
-//           headY = headY - 1;
-//           console.log(headY);
-//         }
-//         break;
-//       case "SOUTH":
-//         if (headY < 9) {
-//           headY++;
-//           console.log(headY);
-//         }
-//         break;
-//       case "EAST":
-//         if (headX < 9) {
-//           headX++;
-//           console.log(headX);
-//         }
-//         break;
-
-//       case "WEST":
-//         if (headX > 0) {
-//           headX = headX - 1;
-//           console.log(headX);
-//         }
-
-//         break;
-//     }
-//   }
-//   //down
-//   //   if (event.keyCode == 40) {
-//   //
-//   //   }
-
-//   //left
-//   if (event.keyCode == 37) {
-//     switch (direction) {
-//       case "NORTH":
-//         direction = "WEST";
-//         break;
-//       case "SOUTH":
-//         direction = "EAST";
-//         break;
-//       case "EAST":
-//         direction = "NORTH";
-//         break;
-//       case "WEST":
-//         direction = "SOUTH";
-//         break;
-//     }
-//   }
-//   //right
-//   if (event.keyCode == 39) {
-//     switch (direction) {
-//       case "NORTH":
-//         direction = "EAST";
-//         break;
-//       case "SOUTH":
-//         direction = "WEST";
-//         break;
-//       case "EAST":
-//         direction = "SOUTH";
-//         break;
-//       case "WEST":
-//         direction = "NORTH";
-//         break;
-//     }
-//   }
-// }
-
 function move() {
   if (state == true) {
+    document.getElementById("actionLabel").innerHTML = "Move";
     switch (direction) {
       case "NORTH":
         if (headY > 0) {
           headY = headY - 1;
-          console.log(headY);
         }
         break;
       case "SOUTH":
         if (headY < 9) {
           headY++;
-          console.log(headY);
         }
         break;
       case "EAST":
         if (headX < 9) {
           headX++;
-          console.log(headX);
         }
         break;
 
       case "WEST":
         if (headX > 0) {
           headX = headX - 1;
-          console.log(headX);
         }
 
         break;
     }
   } else {
-    alert("Please enter input values before proceeding to move.");
+    alert(
+      "Please enter values for placing the drone before proceeding to move."
+    );
   }
 }
 
@@ -178,8 +97,11 @@ function right() {
         direction = "NORTH";
         break;
     }
+    document.getElementById("directionLabel").innerHTML = direction;
   } else {
-    alert("Please enter input values before proceeding to change direction.");
+    alert(
+      "Please enter values for placing the drone before proceeding to change direction."
+    );
   }
 }
 
@@ -188,6 +110,7 @@ function left() {
     switch (direction) {
       case "NORTH":
         direction = "WEST";
+
         break;
       case "SOUTH":
         direction = "EAST";
@@ -199,8 +122,11 @@ function left() {
         direction = "SOUTH";
         break;
     }
+    document.getElementById("directionLabel").innerHTML = direction;
   } else {
-    alert("Please enter input values before proceeding to change direction.");
+    alert(
+      "Please enter values for placing the drone before proceeding to change direction."
+    );
   }
 }
 
@@ -212,7 +138,9 @@ function report() {
       )}\nDirection: ${direction}`
     );
   } else {
-    alert("Please enter input values before proceeding to get a report.");
+    alert(
+      "Please enter values for placing the drone before proceeding to get a report."
+    );
   }
 }
 
@@ -220,29 +148,25 @@ function animate() {
   let speed = 7; //The interval will be seven times a second.
 
   setTimeout(drawGame, 1000 / speed); //update screen 7 times a second
-  console.log(direction);
 }
 
 function attack() {
   if (state == true) {
     drawProjectile();
     drawDrone();
+    document.getElementById("actionLabel").innerHTML = "Attack";
   } else {
-    alert("Please enter input values before proceeding to attack.");
+    alert(
+      "Please enter values for placing the drone before proceeding to attack."
+    );
   }
 }
 
 function drawGame() {
   clearScreen();
   drawDrone();
-  //  drawDrone();
   animate();
 }
-
-// function drawDrone() {
-//   ctx.fillStyle = "orange";
-//   ctx.fillRect(headX * tileCount, headY * tileCount, tileSize, tileSize);
-// }
 
 function drawDrone() {
   var img = document.getElementById("drone");
@@ -256,16 +180,24 @@ function drawProjectile() {
 
   switch (direction) {
     case "NORTH":
-      headY >= 2 ? (projectileY = headY - 2) : alert("Projectile was not fired. There is no free space ahead!");
+      headY >= 2
+        ? (projectileY = headY - 2)
+        : alert("Projectile was not fired. There is no free space ahead!");
       break;
     case "SOUTH":
-      headY <= 7 ? (projectileY = headY + 2) : alert("Projectile was not fired. There is no free space ahead!");
+      headY <= 7
+        ? (projectileY = headY + 2)
+        : alert("Projectile was not fired. There is no free space ahead!");
       break;
     case "EAST":
-      headX <= 7 ? (projectileX = headX + 2) : alert("Projectile was not fired. There is no free space ahead!");
+      headX <= 7
+        ? (projectileX = headX + 2)
+        : alert("Projectile was not fired. There is no free space ahead!");
       break;
     case "WEST":
-      headX >= 2 ? (projectileX = headX - 2) : alert("Projectile was not fired. There is no free space ahead!");
+      headX >= 2
+        ? (projectileX = headX - 2)
+        : alert("Projectile was not fired. There is no free space ahead!");
       break;
   }
 
@@ -275,9 +207,6 @@ function drawProjectile() {
     tileSize,
     tileSize
   );
-
-  console.log(projectileX);
-  console.log(projectileY);
 }
 
 function clearScreen() {
