@@ -13,6 +13,10 @@ Email Address: micara05@gmail.com
 - Drone can move 90 degrees based on left or right arrow selected
 - Report , outputs the current coordinates and the direction
 - Validation is implemented accross the game 
+- Explosion sound added when drone attacks
+- Tooltips included to action buttons
+- Pop up indicating what action youve selected along with the direction
+- Video added as background
 
 ### Features I would like to add but didnt have time
 - Extract the drone entity into its own class

@@ -1,0 +1,29 @@
+1. How would you select which automation tool is best suited for a project?
+    * Depends on the software requirements. Like whether you need UI automation , DB automation  or API automation 
+
+2. How will you go about automating the Movement of the drone?
+    * I’d automate the movement of the drone by writing unit tests for each movement method and 
+      entering in multiple permutations of dummy coordinates to test for each scenario 
+
+3. How will your automation confirm that the drone has moved successfully to the correct location?
+    * The automation will confirm that the drone is in the correct place by checking all edge cases as well as 
+      negative tests and successful outcome tests
+
+4. How will you automate and confirm that no other sequence of commands can be used before
+   the Place command has been executed?
+   * The place command is what should be populating the (x,y) values so if those values have not yet been established, 
+   it means that the place command hasn’t been carried out. If the drone hasn’t been placed, then the automation would
+   assert against what would be null x and y coordinates to ensure that no other commands can be carried out 
+
+5. How will you go about automating and verifying that the drone does not go out of the boundary?
+    * I’d assert against values that are greater than 9 for the x and y coordinates (0-9) when a place command / or any command 
+    is carried out and expect the outcome to be a failure since the boundary sits at 9
+
+6. Based on your Assessment requirements and your solution, what other automatable test scenarios can you identify?
+    * Can automate the MOVE command by asserting against a (x + 1, y) or (x, y + 1) or any coordinates you want to test against. 
+    You want to make sure it moves one unit in the direction it’s facing.
+    * LEFT and RIGHT can be tested and the outcome of that will be North/South/East/West which can be determined by the REPORT method.
+    * ATTACK can be tested whereby if the drone’s position is at (1,9,North). This will not allow you to fire as the projectile would 
+      land at (1,11), which is out of the boundary
+
+

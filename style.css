@@ -6,67 +6,121 @@
   justify-content: center;
   align-items: center;
 }
-.canvas {
-  box-shadow: rgb(0, 0, 0) 20px 10px 50px; /*elevate our canvas and add shadow*/
+
+.bodyFont {
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.inputButtons {
-  place-items: center;
+.h1Template {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #78b383;
+  font-size: 30px;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* .backgroundImage {
-  background-image: url("background.jpg");
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* /* background: url("video-1.mp4") ; */
-/* }  */
+.buttonTemplate {
+  background: #78b383;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: antiquewhite;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s,
+    box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+  /* font-family: Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+.canvasTemplate {
+  box-shadow: rgb(0, 0, 0) 20px 10px 50px; 
+}
+
+.back-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
 
 .parent {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 10px;
   padding: 10px;
   text-align: left;
 }
 .child {
   display: inline-block;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 10px;
   align-self: middle;
 }
 
+.buttonGroup {
+  margin-bottom: 5px;
+  color: antiquewhite;
+}
+
+.inputTextGroup {
+  margin-bottom: 5px;
+  color: antiquewhite;
+}
 
 .buttonMove {
+  background: #78b383;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.87);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s,
+    box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
   height: 50px;
   width: 58px;
   background-image: url("images/move.png");
-  /* background: url('../../public/images/img-4.jpg') center center/cover no-repeat;  */
 }
 
 .buttonReport {
+  background: #78b383;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.87);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s,
+    box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
   height: 50px;
   width: 60px;
   background-image: url("images/report.png");
 }
 
 .buttonAttack {
+  background: #78b383;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.87);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s,
+    box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
   height: 50px;
-  width: 57px;
+  width: 56px;
   background-image: url("images/attack.png");
 }
 
 .buttonleftArrow {
+  background: #78b383;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.87);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s,
+    box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
   height: 50px;
-  width: 54px;
+  width: 51px;
   background-image: url("images/leftarrow.png");
 }
 
-.buttonRightArrow{
+.buttonRightArrow {
+  background: #78b383;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.87);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s,
+    box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
   height: 50px;
-  width: 54px;
+  width: 51px;
   background-image: url("images/rightarrow.png");
 }
 
+.labelTemplate{
+  color: antiquewhite;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}

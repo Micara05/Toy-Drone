@@ -2,87 +2,88 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Toy Drone</title>
-    <meta name="description" content="Description Goes Here" />
+    <title>Drone Attack</title>
+    <meta name="description" content="Toy-Drone Game" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-  
-      <h1>Hello</h1>
-      <div class="child">
-        <div>
-          <input
-            type="text"
-            id="placeX"
-            name="Place X"
-            placeholder="X Coordinate"
-            required
-          />
-          <input
-            type="text"
-            id="placeY"
-            name="Place Y"
-            placeholder="Y Coordinate"
-            required
-          />
-          <button type="button" onclick="place()">Place</button>
-        </div>
-        <div>
-          <input type="radio" id="north" name="direction" value="NORTH" />  
-          <label for="north">North</label>
-            <input type="radio" id="east" name="direction" value="EAST" />  
-          <label for="east">East</label>
-           
-          <input type="radio" id="south" name="direction" value="SOUTH" />
-            <label for="south">South</label>
-          <input type="radio" id="west" name="direction" value="WEST" />
-            <label for="west">West</label>
-        </div>
-        <div>
-          <canvas id="game" width="400" height="400" />
-          <img id="drone" src="images/drone.jpg" alt="Drone" />
-          <script src="index.js"></script>
-        </div>
-        <div>
-          <button
-            class="buttonMove"
-            type="button"
-            onclick="move()"
-            title="Move"
-          ></button>
-          <button
-            class="buttonleftArrow"
-            type="button"
-            onclick="left()"
-            title="Left"
-          ></button>
-          <button
-            class="buttonRightArrow"
-            type="button"
-            onclick="right()"
-            title="Right"
-          ></button>
-          <button
-            class="buttonAttack"
-            type="button"
-            onclick="attack()"
-            title="Attack"
-          ></button>
-          <button
-            class="buttonReport"
-            type="button"
-            onclick="report()"
-            title="Report"
-          ></button>
-        </div>
+    <h1 class="h1Template">Drone Attack</h1>
+    <div class="child">
+      <div class="inputTextGroup">
+        <input
+          type="text"
+          id="placeX"
+          name="Place X"
+          placeholder="X Coordinate"
+          required
+        />
+        <input
+          type="text"
+          id="placeY"
+          name="Place Y"
+          placeholder="Y Coordinate"
+          required
+        />
+        <button class="buttonTemplate" type="button" onclick="place()">
+          Place
+        </button>
       </div>
-    
-        <label id="actionLabel"></label>
-        <label id="directionLabel"></label>
-      
-    
-    <!-- <video playsinline autoplay muted loop>
-      <source src="video-1.mp4" type="video/webm" />
-    </video> -->
+      <div class="buttonGroup">
+        <input type="radio" id="north" name="direction" value="NORTH" />  
+        <label for="north">North</label>
+          <input type="radio" id="east" name="direction" value="EAST" />  
+        <label for="east">East</label>
+         
+        <input type="radio" id="south" name="direction" value="SOUTH" />
+          <label for="south">South</label>
+        <input type="radio" id="west" name="direction" value="WEST" />
+          <label for="west">West</label>
+      </div>
+      <div>
+        <canvas class="canvasTemplate" id="game" width="400" height="400" />
+        <img id="drone" src="images/drone.jpg" alt="Drone" />
+        <script src="index.js"></script>
+      </div>
+      <div>
+        <button
+          class="buttonMove"
+          type="button"
+          onclick="move()"
+          title="Move"
+        ></button>
+        <button
+          class="buttonleftArrow"
+          type="button"
+          onclick="left()"
+          title="Left"
+        ></button>
+        <button
+          class="buttonRightArrow"
+          type="button"
+          onclick="right()"
+          title="Right"
+        ></button>
+        <button
+          class="buttonAttack"
+          type="button"
+          onclick="attack()"
+          title="Attack"
+        ></button>
+        <button
+          class="buttonReport"
+          type="button"
+          onclick="report()"
+          title="Report"
+        ></button>
+        <audio id="audio" src="videos/explosion.wav"></audio>
+      </div>
+    </div>
+
+    <label class="labelTemplate" id="actionLabel"></label>
+    <label class="labelTemplate" id="directionLabel"></label>
+
+    <video playsinline autoplay muted loop class="back-video">
+      <source src="videos/video-1.mp4" type="video/mp4" />
+    </video>
   </body>
 </html>
