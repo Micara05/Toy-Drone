@@ -28,6 +28,8 @@
           Place
         </button>
       </div>
+    </div>
+    <div class="child">
       <div class="buttonGroup">
         <input type="radio" id="north" name="direction" value="NORTH" />  
         <label for="north">North</label>
@@ -39,12 +41,16 @@
         <input type="radio" id="west" name="direction" value="WEST" />
           <label for="west">West</label>
       </div>
-      <div>
+    </div>
+    <div>
+      <div class="child">
         <canvas class="canvasTemplate" id="game" width="400" height="400" />
         <img id="drone" src="images/drone.jpg" alt="Drone" />
         <script src="index.js"></script>
       </div>
-      <div>
+    </div>
+    <div class="child">
+      <div >
         <button
           class="buttonMove"
           type="button"
@@ -75,13 +81,20 @@
           onclick="report()"
           title="Report"
         ></button>
+        <audio id="audioMove" src="videos/moveDrone.wav"></audio>
         <audio id="audio" src="videos/explosion.wav"></audio>
       </div>
     </div>
 
-    <label class="labelTemplate" id="actionLabel"></label>
-    <label class="labelTemplate" id="directionLabel"></label>
-
+    <div class="child">
+      <label class="labelTemplate" id="currentActionLabel"> Current Action:  </label>
+      <label class="labelTemplate" id="actionLabel"> No action selected.</label>
+    </div>
+    <div class="child">
+      <label class="labelTemplate" id="currentDirectionLabel"> Current Direction:  </label>
+      <label class="labelTemplate" id="directionLabel"> Drone not placed.</label>
+    </div>
+  
     <video playsinline autoplay muted loop class="back-video">
       <source src="videos/video-1.mp4" type="video/mp4" />
     </video>

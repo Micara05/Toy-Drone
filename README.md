@@ -14,11 +14,13 @@ Email Address: micara05@gmail.com
 - Report , outputs the current coordinates and the direction
 - Validation is implemented accross the game 
 - Explosion sound added when drone attacks
+- Drone sound added when drone moves
 - Tooltips included to action buttons
 - Pop up indicating what action youve selected along with the direction
 - Video added as background
 
-### Features I would like to add but didnt have time
+### Things I can improve on: 
+- Although the game currently works on both mobile and desktop, the styling needs to be adjusted to be suited for mobile devices
 - Extract the drone entity into its own class
 - Use an actual game engine like cocos creator or pixie js
 - Improve animation of the explosion

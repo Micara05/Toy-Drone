@@ -10,6 +10,7 @@ var state = false; // Has the drone been placed
 function place() {
   var placeX = document.getElementById("placeX").value; // Get the value of input x
   var placeY = document.getElementById("placeY").value; // Get the value of input y
+
   const radioButtons = document.querySelectorAll('input[name="direction"]');
   var radioBtnChecked = false;
 
@@ -41,6 +42,7 @@ function place() {
     for (const radioButton of radioButtons) {
       if (radioButton.checked) {
         direction = radioButton.value;
+        document.getElementById("directionLabel").innerHTML = direction;
         break;
       }
     }
@@ -54,30 +56,35 @@ function place() {
 }
 
 function move() {
+  var audio = document.getElementById("audioMove");
   // If the drone has been placed
   if (state == true) {
-    document.getElementById("actionLabel").innerHTML = "MOVE";
+    document.getElementById("actionLabel").innerHTML = "MOVE ";
     // Move drone by 1 unit depending on its direction
     switch (direction) {
       case "NORTH":
         if (headY > 0) {
           headY = headY - 1;
+          audio.play(); // Execute move sound
         }
         break;
       case "SOUTH":
         if (headY < 9) {
           headY++;
+          audio.play(); // Execute move sound
         }
         break;
       case "EAST":
         if (headX < 9) {
           headX++;
+          audio.play(); // Execute move sound
         }
         break;
 
       case "WEST":
         if (headX > 0) {
           headX = headX - 1;
+          audio.play(); // Execute move sound
         }
 
         break;
@@ -142,7 +149,7 @@ function left() {
 }
 
 function report() {
-  // If drone has been placed , output the drones current coordinates and direction 
+  // If drone has been placed , output the drones current coordinates and direction
   if (state == true) {
     alert(
       `Coordinate X: ${headX}\nCoordinate Y: ${Math.abs(
@@ -166,9 +173,7 @@ function attack() {
   if (state == true) {
     drawProjectile(); // Draw projectile explosion 2 units ahead in current direction
     drawDrone(); // Re draw drone
-    document.getElementById("actionLabel").innerHTML = "ATTACK";
-    var audio = document.getElementById("audio");
-    audio.play(); // Execute explosion effect
+    document.getElementById("actionLabel").innerHTML = "ATTACK ";
   } else {
     alert(
       "Please enter values for placing the drone before proceeding to attack."
@@ -191,29 +196,44 @@ function drawProjectile() {
   ctx.fillStyle = "orange";
   let projectileX = headX;
   let projectileY = headY;
+  var audio = document.getElementById("audio");
 
   // Draw projectile - Check if there is sufficient space - Projectile should not be sent if it will cross the boundary
   switch (direction) {
     case "NORTH":
-      headY >= 2
-        ? (projectileY = headY - 2)
-        : alert("Projectile was not fired. There is no free space ahead!");
+      if (headY >= 2) {
+        projectileY = headY - 2;
+        audio.play(); // Execute explosion effect
+      } else {
+        alert("Projectile was not fired. There is no free space ahead!");
+      }
       break;
     case "SOUTH":
-      headY <= 7
-        ? (projectileY = headY + 2)
-        : alert("Projectile was not fired. There is no free space ahead!");
+      if (headY <= 7) {
+        projectileY = headY + 2;
+        audio.play(); // Execute explosion effect
+      } else {
+        alert("Projectile was not fired. There is no free space ahead!");
+      }
       break;
     case "EAST":
-      headX <= 7
-        ? (projectileX = headX + 2)
-        : alert("Projectile was not fired. There is no free space ahead!");
+      if (headX <= 7) {
+        projectileX = headX + 2;
+        audio.play(); // Execute explosion effect
+      } else {
+        alert("Projectile was not fired. There is no free space ahead!");
+      }
       break;
     case "WEST":
-      headX >= 2
-        ? (projectileX = headX - 2)
-        : alert("Projectile was not fired. There is no free space ahead!");
+      if (headX >= 2) {
+        projectileX = headX - 2;
+        audio.play(); // Execute explosion effect
+      } else {
+        alert("Projectile was not fired. There is no free space ahead!");
+      }
       break;
+    default:
+      alert("Unknown direction");
   }
 
   ctx.fillRect(

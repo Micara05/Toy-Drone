@@ -18,7 +18,7 @@
   justify-content: center;
   align-items: center;
   color: #78b383;
-  font-size: 30px;
+  font-size: 50px;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -53,6 +53,9 @@
   /* border: 1px solid black; */
   padding: 10px;
   align-self: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttonGroup {
